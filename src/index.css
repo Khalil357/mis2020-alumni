@@ -1,0 +1,48 @@
+/* src/index.css - Add these responsive utilities */
+@import "tailwindcss";
+
+@theme {
+  /* ... your existing theme ... */
+  
+  /* Responsive breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Custom responsive utilities */
+@layer utilities {
+  /* Better text sizing for mobile */
+  .text-mobile-lg {
+    @apply text-lg;
+  }
+  
+  .text-desktop-xl {
+    @apply lg:text-xl;
+  }
+  
+  /* Responsive spacing */
+  .responsive-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .responsive-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Hide/show based on screen size */
+  .mobile-only {
+    @apply block lg:hidden;
+  }
+  
+  .desktop-only {
+    @apply hidden lg:block;
+  }
+  
+  /* Better form inputs on mobile */
+  .input-mobile-friendly {
+    @apply text-base sm:text-lg;
+  }
+}
